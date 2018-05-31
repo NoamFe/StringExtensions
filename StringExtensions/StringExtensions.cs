@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace NFSystems
 {
@@ -8,5 +9,6 @@ namespace NFSystems
 
         public static bool IsNotEmpty(this string value) => !string.IsNullOrEmpty(value);
 
+        public static string[] SplitCamelCase(this string source) => Regex.Split(source, @"(?<!^)(?=[A-Z])");
     }
 }
